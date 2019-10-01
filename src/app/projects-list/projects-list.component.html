@@ -1,1 +1,7 @@
-<p>projects-list works!</p>
+<div id="listContainer">
+  <ul id="projectList" *ngIf="prjList">
+      <li class="project" *ngFor="let prj of prjList">
+        <p>{{prj.company_name}} - {{prj.contact_name}} - {{prj.location_city}}</p>
+      </li>
+  </ul>
+</div>
