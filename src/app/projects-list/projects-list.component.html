@@ -1,7 +1,14 @@
 <div id="listContainer">
   <ul id="projectList" *ngIf="prjList">
       <li class="project" *ngFor="let prj of prjList">
-        <p>{{prj.company_name}} - {{prj.contact_name}} - {{prj.location_city}}</p>
+        <img class="prjImage" src="https://wealthbuilders.org/wp-content/uploads/2015/06/project-placeholder.jpg" alt="{{prj.title}}"/>
+        <div class="prjInfo">
+            <p class="prjCompany">{{prj.company_name}}</p>
+            <div>
+              <p class="prjContact">{{prj.contact_name}}</p>
+              <p class="prjLocation">{{prj.location_city}}</p>
+            </div>
+        </div>
       </li>
   </ul>
 </div>

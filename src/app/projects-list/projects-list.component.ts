@@ -1,8 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoadProjectsService } from '../services/load-projects.service';
 import { IProject } from '../models/project.model';
 import { Subscription } from 'rxjs';
-import {take, delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-projects-list',
@@ -10,6 +9,8 @@ import {take, delay} from 'rxjs/operators';
   styleUrls: ['./projects-list.component.sass']
 })
 export class ProjectsListComponent implements OnInit {
+  private currPage: number = 1;
+  private prjToLoad: number = 8;
   private prjList: Array<IProject> = [];
   private prjListSubscription : Subscription;
   constructor(private prjService : LoadProjectsService) { }
