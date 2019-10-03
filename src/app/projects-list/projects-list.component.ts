@@ -21,8 +21,6 @@ export class ProjectsListComponent implements OnInit {
     this.prjListSubscription = this.prjService.getAllProjects().subscribe(
       data => {
         this.prjList=data['projects'];
-        console.log(data);
-        console.log(this.prjList);
       });
   }
   
@@ -36,7 +34,6 @@ export class ProjectsListComponent implements OnInit {
 
   ngOnDestroy(){
     this.prjListSubscription.unsubscribe();
-    console.log('cleared');
   }
 
 }
