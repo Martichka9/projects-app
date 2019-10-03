@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Renderer2, HostListener } from '@angular/core';
 import { LoadProjectsService } from '../services/load-projects.service';
 import { IProject } from '../models/project.model';
 import { Subscription } from 'rxjs';
@@ -13,7 +13,9 @@ export class ProjectsListComponent implements OnInit {
   private prjToLoad: number = 8;
   private prjList: Array<IProject> = [];
   private prjListSubscription : Subscription;
-  constructor(private prjService : LoadProjectsService) { }
+  constructor(private prjService : LoadProjectsService, private elem: ElementRef,private renderer : Renderer2) { }
+
+  @ViewChild('getWidth',{static:false}) containerWidth : ElementRef;
 
   ngOnInit() {
     this.prjListSubscription = this.prjService.getAllProjects().subscribe(
@@ -23,8 +25,18 @@ export class ProjectsListComponent implements OnInit {
         console.log(this.prjList);
       });
   }
+  
+  ngAfterViewInit(){
+    this.prjToLoad = this.prjService.prjToShow(this.containerWidth.nativeElement.offsetWidth);
+  }
+
+  @HostListener('window:resize') onResize(){
+    this.prjToLoad = this.prjService.prjToShow(this.containerWidth.nativeElement.offsetWidth);
+  }
+
   ngOnDestroy(){
     this.prjListSubscription.unsubscribe();
     console.log('cleared');
   }
+
 }

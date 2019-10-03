@@ -15,4 +15,22 @@ export class LoadProjectsService {
   getAllProjects() : Observable<IProject[]>{
     return this.http.get<IProject[]>(BASE_URL);
   }
+  
+  prjToShow(width: number){
+    switch (true) {
+      case width < 560:
+        return 3;
+        break;
+      case width < 1090:
+        return 6;
+        break;
+      case width < 1350:
+        return 8;
+        break;
+      default:
+        return 10;
+        break;
+    }
+    
+  }
 }

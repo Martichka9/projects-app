@@ -1,14 +1,22 @@
-<div id="listContainer">
+<div id="listContainer" #getWidth>
+  <div id="containerHeading">
+    <div class="headingBG"></div>
+      <h1 class="headingText">All Projects</h1>
+      <p class="headingText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
   <ul id="projectList" *ngIf="prjList">
-      <li class="project" *ngFor="let prj of prjList">
-        <img class="prjImage" src="https://wealthbuilders.org/wp-content/uploads/2015/06/project-placeholder.jpg" alt="{{prj.title}}"/>
-        <div class="prjInfo">
-            <p class="prjCompany">{{prj.company_name}}</p>
-            <div>
-              <p class="prjContact">{{prj.contact_name}}</p>
-              <p class="prjLocation">{{prj.location_city}}</p>
-            </div>
-        </div>
+      <li *ngFor="let prj of prjList | paginate: { itemsPerPage: prjToLoad, currentPage: currPage }">
+        <a class="project" routerLink="{{prj.id}}">
+          <img class="prjImage" src="https://wealthbuilders.org/wp-content/uploads/2015/06/project-placeholder.jpg" alt="{{prj.title}}"/>
+          <div class="prjInfo">
+              <p class="prjCompany"><strong>{{prj.company_name}}</strong></p>
+              <div>
+                <p class="prjContact"><i>{{prj.contact_name}}</i></p>
+                <p class="prjLocation"><i>{{prj.location_city}}</i></p>
+              </div>
+          </div>
+        </a>
       </li>
   </ul>
+  <pagination-controls (pageChange)="currPage = $event"></pagination-controls>
 </div>

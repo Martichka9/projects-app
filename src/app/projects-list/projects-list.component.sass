@@ -1,32 +1,52 @@
-#projectList
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: space-around
-  max-width: 1350px
-  margin: 0 auto
-  
-  .project
-    width: 250px
-    height: 300px
-    margin: 10px
-    display: grid
-    grid-gap: 5px
-    grid-template-rows: 179px 116px
-    border-radius: 10px 10px
-    box-shadow: -2px 2px 3px 1px #aac1bc
-    
-    .prjImage
-      max-width: 250px
-      max-height: 179px
-      border-radius: 10px 10px
-      margin: 0 auto
-    
-    .prjInfo
-      padding: 0 15px
-      text-align: right
-      display: grid
-      grid-template-rows: 70px 45px
+#listContainer
+  text-align: center
 
-      .prjCompany
-        text-align: center
+  #containerHeading
+    height: 100px
+    background: url('https://ak9.picdn.net/shutterstock/videos/12139319/thumb/1.jpg') center
+    background-size: cover
+    display: grid
+    grid-gap: 10px
+    padding: 20px 35px
+
+    .headingText
+      width: 100%
+      max-width: 1350px
+      margin: 0 auto
+      color: white
+      text-align: left
+
+  #projectList
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-around
+    max-width: 1350px
+    margin: 10px auto
+    
+    .project
+      width: 250px
+      height: 300px
+      text-decoration: none
+      color: #000
+      margin: 10px
+      display: grid
+      grid-gap: 5px
+      grid-template-rows: 179px 116px
+      border-radius: 10px 10px
+      box-shadow: -2px 2px 3px 1px #aac1bc
+      
+      .prjImage
+        max-width: 250px
+        max-height: 179px
+        border-radius: 10px 10px
+        margin: 0 auto
+      
+      .prjInfo
+        padding: 0 15px
+        text-align: right
+        display: grid
+        grid-template-rows: 70px 45px
+
+        .prjCompany
+          text-align: center
