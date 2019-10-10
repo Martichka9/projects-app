@@ -1,0 +1,23 @@
+<div id="listContainer" #getWidth>
+        <div id="containerHeading">
+          <div class="headingBG"></div>
+            <h1 class="headingText">All Positions</h1>
+            <p class="headingText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <ul id="projectList" *ngIf="prjList">
+            <li *ngFor="let prj of prjList | paginate: { itemsPerPage: prjToLoad, currentPage: currPage }">
+              <a class="project" routerLink="{{prj.id}}">
+                <img class="prjImage" src="../../assets/imgs/search.png" alt="{{prj.title}}"/>
+                <div class="prjInfo">
+                    <p class="prjCompany"><strong>{{prj.title}}</strong></p>
+                    <div>
+                      <p class="prjContact"><i>{{prj.company_name}}</i></p>
+                      <p class="prjLocation"><i>{{prj.location_city}}</i></p>
+                    </div>
+                </div>
+                <div><p>{{prj.publish_date | date}}</p></div>
+              </a>
+            </li>
+        </ul>
+        <pagination-controls (pageChange)="currPage = $event"></pagination-controls>
+      </div>

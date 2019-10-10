@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { IProject } from '../models/project.model';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.sass']
+  selector: 'app-job',
+  templateUrl: './job.component.html',
+  styleUrls: ['./job.component.sass']
 })
-export class ProjectComponent implements OnInit {
-  private project = IProject;
+export class JobComponent implements OnInit {
+  private job = IProject;
   private subscription : Subscription;
-  
+
   constructor(private route: ActivatedRoute) { 
     this.subscription = this.route.data.subscribe(
       data => {
-        this.project = data.pResolver.projects.find(elem => elem.id === route.params['_value']['id']);
+        this.job = data.pResolver.projects.find(elem => elem.id === route.params['_value']['id']);
       });
   }
 

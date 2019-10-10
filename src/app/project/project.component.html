@@ -1,7 +1,7 @@
-<div id="prjContainer">
+<div id="prjContainer" *ngIf="project">
     <img class="prjImage" src="https://wealthbuilders.org/wp-content/uploads/2015/06/project-placeholder.jpg" alt="{{prj.title}}"/>
     <div id="projectInfo">
-        <h2>{{project.title}}</h2>
+        <h2 class="projectHeadings" *ngIf="project.title">{{project.title}}</h2>
         <p class="projectHeadings" *ngIf="project.company_name">Published by {{project.company_name}} company <span *ngIf="project.location_city">({{project.location_city}})</span></p>
         <p class="projectHeadings" *ngIf="project.publish_date">{{project.publish_date | date}}</p>
         <p *ngIf="project.description">{{project.description}}</p>
