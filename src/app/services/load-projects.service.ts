@@ -18,7 +18,7 @@ export class LoadProjectsService {
       case width < 1090:
         return 6;
         break;
-      case width < 1350:
+      case width < 1024:
         return 8;
         break;
       default:
@@ -35,7 +35,7 @@ export class LoadProjectsService {
       case width < 1090:
         return 6;
         break;
-      case width < 1350:
+      case width < 1024:
         return 8;
         break;
       default:
