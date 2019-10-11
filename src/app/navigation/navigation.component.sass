@@ -15,7 +15,7 @@
       width: 250px
       height: 100%
     
-    #menuIcon
+    #menuIcon, .close
       display: none
 
     #mainMenu
@@ -31,12 +31,33 @@
           text-decoration: none
           padding-top: 30px
           box-sizing: border-box
+      .mLink:hover
+        box-shadow: 0px 0px 10px 3px #009688 inset
+        border-radius: 5px 5px
+        font-weight: bold
+        color: #009688
+
 
 @media only screen and (max-width: 960px)
   #navContainer
     #nav
       #mainMenu
         display: none
+        width: 100%
+        position: absolute
+        left: 0
+        
+        .close
+          display: inherit
+          color: #009688
+          font-size: 35px
+          padding: 0 6px
+          
+        .mLink
+          background-color: #fff
+          text-align: center
+          a.links
+            width: auto
         
       #menuIcon
         display: block

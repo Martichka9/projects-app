@@ -21,15 +21,7 @@ export class JobsListComponent implements OnInit {
       });
   }
 
-  @ViewChild('getWidth',{static:false}) containerWidth : ElementRef;
-  @HostListener('window:resize') onResize(){
-    this.prjToLoad = this.prjService.jobsToShow(this.containerWidth.nativeElement.offsetWidth);
-  }
-  @HostListener('document:ready') onLoadDone(){
-    this.prjToLoad = this.prjService.jobsToShow(this.containerWidth.nativeElement.offsetWidth);
-  }
-
-  ngOnInit() {
+  ngOnInit() {    
   }
   
   ngOnDestroy(){

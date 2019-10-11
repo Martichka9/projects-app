@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { MenuBtnDirective } from './directives/menu-btn.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    MenuBtnDirective
   ],
   imports: [
     BrowserModule,

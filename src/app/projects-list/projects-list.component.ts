@@ -3,7 +3,6 @@ import { LoadProjectsService } from '../services/load-projects.service';
 import { IProject } from '../models/project.model';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
-import { PResolver } from '../services/p-resolver.service';
 
 @Component({
   selector: 'app-projects-list',
@@ -11,10 +10,17 @@ import { PResolver } from '../services/p-resolver.service';
   styleUrls: ['./projects-list.component.sass']
 })
 export class ProjectsListComponent implements OnInit {
+  @ViewChild('getWidth',{static:false}) containerWidth : ElementRef;
   private currPage: number = 1;
-  private prjToLoad: number = 8;
+  private prjToLoad: number = 9;
   private prjList: Array<IProject> = [];
   private prjListSubscription : Subscription;
+
+  public clicks: boolean = false;
+
+  private width:number;
+private height:number;
+
   constructor(private route : ActivatedRoute, private prjService : LoadProjectsService, private elem: ElementRef,private renderer : Renderer2) { 
     this.prjListSubscription = this.route.data.subscribe(
       data => {
@@ -22,15 +28,12 @@ export class ProjectsListComponent implements OnInit {
       });
   }
 
-  @ViewChild('getWidth',{static:false}) containerWidth : ElementRef;
   @HostListener('window:resize') onResize(){
-    this.prjToLoad = this.prjService.prjToShow(this.containerWidth.nativeElement.offsetWidth);
-  }
-  @HostListener('document:ready') onLoadDone(){
-    this.prjToLoad = this.prjService.jobsToShow(this.containerWidth.nativeElement.offsetWidth);
+    this.prjToLoad = this.prjService.prjToShow(window.innerWidth);
   }
 
   ngOnInit() {
+    this.onResize();
   }
 
   ngOnDestroy(){

@@ -12,36 +12,15 @@ export class LoadProjectsService {
 
   prjToShow(width: number){
     switch (true) {
-      case width < 560:
-        return 3;
+      case width <= 560:
+        return 4;
         break;
-      case width < 1090:
+      case width <= 1366:
         return 6;
         break;
-      case width < 1024:
-        return 8;
-        break;
       default:
-        return 10;
+        return 9;
         break;
     }
-  }
-
-  jobsToShow(width: number){
-    switch (true) {
-      case width < 560:
-        return 3;
-        break;
-      case width < 1090:
-        return 6;
-        break;
-      case width < 1024:
-        return 8;
-        break;
-      default:
-        return 10;
-        break;
-    }
-    
   }
 }
