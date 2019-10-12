@@ -1,0 +1,32 @@
+<div id="container">
+    <h4>Leave us a message:</h4>
+    <!-- <pre>{{msgForm.value | json}}</pre> -->
+    <form [formGroup]="msgForm" (ngSubmit)="send(msgForm)">
+       
+        <div class="inputGroup">
+            <label for="name" class="label"> <i class="fa fa-user"></i> </label>
+            <input formControlName="sender_name" id="name" placeholder="Full Name">
+        </div>
+        <div class="errMsg" *ngIf="msgForm?.controls.sender_name?.errors?.required && msgForm?.controls.sender_name?.touched">Name is required!</div>
+        <div class="errMsg" *ngIf="msgForm?.controls.sender_name?.errors?.pattern && msgForm?.controls.sender_name?.touched">Please enter your first and last name starting with capital letter!</div>
+        
+        <div class="inputGroup">
+            <label for="email" class="label"> <i class="fa fa-envelope"></i> </label>
+            <input formControlName="sender_email" id="email" placeholder="Email Address" type="email">
+        </div>
+        <div class="errMsg" *ngIf="msgForm?.controls.sender_email?.errors?.required && msgForm?.controls.sender_email?.touched">E-mail is required!</div>
+        <div class="errMsg" *ngIf="msgForm?.controls.sender_email?.errors?.email && msgForm?.controls.sender_email?.touched">Please enter valid e-mail!</div>
+
+        
+        <div class="inputGroup">
+            <label for="message" class="label"> <i class="fa fa-lock"></i> </label>
+            <textarea formControlName="message" name="message" id="message" placeholder="Your message" type="message" cols="80" rows="15"></textarea>
+        </div>
+        <div class="errMsg" *ngIf="msgForm?.controls.message?.errors?.required && msgForm?.controls.message?.touched">Message is required!</div>
+        <div class="errMsg" *ngIf="!!msgForm?.controls.message?.errors?.minlength && msgForm?.controls.message?.touched">Message should be at least 50 characters long!</div>
+        
+        <div class="formGroup">
+            <button type="submit" class="btn" [disabled]="msgForm?.invalid">Send</button>
+        </div>
+    </form>
+</div>

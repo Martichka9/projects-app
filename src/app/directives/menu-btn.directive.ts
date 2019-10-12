@@ -6,11 +6,11 @@ var clicksOnMenu = false;
   selector: '[appMenuBtn]'
 })
 export class MenuBtnDirective {
-  @Input('clicks') clicks: boolean;
+  
   constructor(private elem : ElementRef, private rend : Renderer2) { }
   
   @HostListener('click', ['$event.target']) onClick($event){
-    if(window.innerWidth < 960){
+    if(window.innerWidth <= 960){
       if (!clicksOnMenu) {
         this.rend.setStyle(document.getElementById('menuIcon'),'display','none');
         this.rend.setStyle(document.getElementById('mainMenu'),'display','block');

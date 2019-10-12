@@ -1,27 +1,27 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { LoadProjectsService } from '../services/load-projects.service';
-import { AppComponent } from '../app.component';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.sass']
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.sass']
 })
-export class HomeComponent implements OnInit {
+export class AboutComponent implements OnInit {
 
   constructor(private rend: Renderer2) { }
-  
+
   ngOnInit() {
-    
   }
+
   ngAfterViewChecked(){
-    if(document.getElementById('homeBody').offsetHeight+80 <= window.innerWidth){
+    if(document.getElementById('container').offsetHeight+80 <= window.innerHeight){
       this.rend.setStyle(document.getElementById('footer'),'position','absolute');
       this.rend.setStyle(document.getElementById('footer'),'bottom','0');
     }
   }
-  ngOnDestroy(){
+
+  ngOnDestroy(){ 
     this.rend.setStyle(document.getElementById('footer'),'position','');
     this.rend.setStyle(document.getElementById('footer'),'bottom','');
   }
 }
+

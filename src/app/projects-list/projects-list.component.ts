@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Renderer2 } from '@angular/core';
 import { LoadProjectsService } from '../services/load-projects.service';
 import { IProject } from '../models/project.model';
 import { Subscription } from 'rxjs';
@@ -17,7 +17,7 @@ export class ProjectsListComponent implements OnInit {
 
   public clicks: boolean = false;
 
-  constructor(private route : ActivatedRoute, private prjService : LoadProjectsService) { 
+  constructor(private route : ActivatedRoute, private prjService : LoadProjectsService, private rend: Renderer2) { 
     this.prjListSubscription = this.route.data.subscribe(
       data => {
         this.prjList = data.pResolver.projects;
@@ -32,8 +32,19 @@ export class ProjectsListComponent implements OnInit {
     this.onResize();
   }
 
+  ngAfterViewChecked(){
+    console.log(document.getElementById('listContainer').offsetHeight+80);
+    console.log(window.innerHeight);
+    if(document.getElementById('listContainer').offsetHeight+180 <= window.innerHeight){
+      this.rend.setStyle(document.getElementById('footer'),'position','absolute');
+      this.rend.setStyle(document.getElementById('footer'),'bottom','0');
+    }
+  }
+
   ngOnDestroy(){
     this.prjListSubscription.unsubscribe();
+    this.rend.setStyle(document.getElementById('footer'),'position','');
+    this.rend.setStyle(document.getElementById('footer'),'bottom','');
   }
 
 }

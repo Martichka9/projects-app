@@ -8,6 +8,8 @@ import { ProjectComponent } from './project/project.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { JobComponent } from './job/job.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 import { PResolver } from './services/p-resolver.service';
 
@@ -17,6 +19,8 @@ const routes: Routes = [
   {path: 'projects-list/:id', component: ProjectComponent, resolve: {pResolver: PResolver}},
   {path: 'jobs-list', component: JobsListComponent, resolve: {pResolver: PResolver}},
   {path: 'jobs-list/:id', component: JobComponent, resolve: {pResolver: PResolver}},
+  {path: 'about', component: AboutComponent},
+  {path: 'contact', component: ContactComponent},
   {path: '', pathMatch: 'full', redirectTo: 'home'}
 ];
 
@@ -26,7 +30,8 @@ const routes: Routes = [
     ProjectComponent,
     ProjectsListComponent,
     JobsListComponent,
-    JobComponent
+    JobComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule, 

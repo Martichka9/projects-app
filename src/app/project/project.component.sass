@@ -2,7 +2,6 @@
   
 #projectContainer
     @include anElementContainer
-    margin: 230px auto
     
     .projectImage, #projectInfo
         width:49%
@@ -13,10 +12,12 @@
 
         h2.projectheaders
             text-align: center
+            font-size: $projectHeaderFontSize
 
         p.projectheaders
             text-align: center
             margin: 2px 0
+            font-size: $projectHeaderFontSize
 
         p.projectFooters
             @include anElementFooter
@@ -34,6 +35,7 @@
             cursor: pointer
         p.loc, p.date
             font-style: italic
+            font-size: 0.8em
 
 @media only screen and (max-width: 1080px)
     #projectContainer 
