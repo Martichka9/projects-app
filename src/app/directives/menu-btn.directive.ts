@@ -10,7 +10,6 @@ export class MenuBtnDirective {
   constructor(private elem : ElementRef, private rend : Renderer2) { }
   
   @HostListener('click', ['$event.target']) onClick($event){
-    console.log(window.innerWidth<960)
     if(window.innerWidth < 960){
       if (!clicksOnMenu) {
         this.rend.setStyle(document.getElementById('menuIcon'),'display','none');

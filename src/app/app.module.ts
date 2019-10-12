@@ -5,13 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
+
 import { MenuBtnDirective } from './directives/menu-btn.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
-    MenuBtnDirective
+    MenuBtnDirective,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

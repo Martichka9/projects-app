@@ -1,8 +1,8 @@
-<div id="listContainer" #getWidth>
-  <div id="containerHeading">
-    <div class="headingBG"></div>
-      <h1 class="headingText">All Projects</h1>
-      <p class="headingText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<div id="listContainer" class="container">
+  <div id="containerheader">
+    <div class="headerBG"></div>
+      <h1 class="headerText">All Projects</h1>
+      <p class="headerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
   <ul id="projectList" *ngIf="prjList">
       <li *ngFor="let prj of prjList | paginate: { itemsPerPage: prjToLoad, currentPage: currPage }">
