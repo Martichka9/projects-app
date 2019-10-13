@@ -4,6 +4,7 @@
             <h1 class="headerText">All Positions</h1>
             <p class="headerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
+        <pagination-controls (pageChange)="currPage = $event"></pagination-controls>
         <ul id="projectList" *ngIf="prjList">
             <li *ngFor="let prj of prjList | paginate: { itemsPerPage: prjToLoad, currentPage: currPage }">
               <a class="project" routerLink="{{prj.id}}">

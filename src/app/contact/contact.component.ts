@@ -19,11 +19,10 @@ export class ContactComponent implements OnInit {
       sender_email: ['',[Validators.required,Validators.email]],
       message: ['',[Validators.required,Validators.minLength(50)]]
     });
-    console.log(this.msgForm)
   }
   
   ngAfterViewChecked(){
-    if(document.getElementById('container').offsetHeight+80 <= window.innerHeight){
+    if(document.getElementById('outer').offsetHeight+80 <= window.innerHeight){
       this.rend.setStyle(document.getElementById('footer'),'position','absolute');
       this.rend.setStyle(document.getElementById('footer'),'bottom','0');
     }

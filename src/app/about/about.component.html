@@ -1,4 +1,4 @@
-<div id="container">
+<div id="container" >
     <h1>Short Introduction</h1>
     <div>
         <p class="intro">This app is showing a list of JSON objects in two different styles.</p>
@@ -10,10 +10,11 @@
     </div>
     <p class="details">On Home page the user have the chance to choose which visualization would like to see using two given links.
     A link to each view is available in the navigation bar too. It contains also links to Home component, About and Contact components.</p>
-    <p class="details">On smaller screens (960px and below) the horizontal menu is hidden and a menu button appears. This is done in the menu-btn directive via @HostListener on click event. The directive is attached to the menu icon and the unordered list containing the menu links.</p>
+    <p class="details">On smaller screens (960px and below) the horizontal menu is hidden and a menu button <i class="fas fa-ellipsis-v"></i> appears. This is done in the menu-btn directive via @HostListener on click event. The directive is attached to the menu icon and the unordered list containing the menu links.</p>
     <p class="details">Through resolver I return observable containing the data. In each component data is loaded as per component's purpose (list of objects or single object) from the JSON data file.</p>
     <p class="details">Separate service (LoadProjectsService) is taking care of how many projects to be shown on one page depending on window width.</p>
     <p class="details">The styles of the single Project and a single Job components are a bit different too.
     On wider screens (width above 1080px) the single project is shown as a horizontal card with image on left and the information on right. When screen width is below 1080px the project image and information are loaded in one column.</p>
     <p class="details">Job component is always loaded as a vertical card with the image on top and information below it.</p>
+    <p>On Contact page there is a simple contact form.</p>
 </div>

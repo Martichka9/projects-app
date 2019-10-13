@@ -6,6 +6,7 @@ $marginPrjAndJob: 120px auto
 $headFootHeight: 80px
 $headFootBackgroundColor: #d3f7ee
 $projectHeaderFontSize: 1.2em
+$outerPadding: 20px 0 50px
   
 @mixin headerContainerStyle
   max-height: 200px
@@ -40,7 +41,7 @@ $projectHeaderFontSize: 1.2em
 @mixin anElementContainer
   width: 80%
   max-width: $maxWidth
-  min-width: 400px
+  min-width: 250px
   display: flex
   flex-wrap: wrap
   flex-direction: row
@@ -54,7 +55,7 @@ $projectHeaderFontSize: 1.2em
 
 @mixin anElementInfoStyle
   display: grid
-  grid-template-rows: 40px auto auto auto auto auto 50px
+  grid-template-rows: auto auto auto auto auto auto 50px
   justify-content: center
   align-content: center
 
@@ -78,3 +79,7 @@ $projectHeaderFontSize: 1.2em
   border-radius: $borderRadius
   width: 113px
   text-align: center
+
+.fixed
+  position: absolute
+  bottom: 0

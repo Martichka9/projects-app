@@ -1,26 +1,31 @@
 @import ../../assets/styles.sass
 
-#container
-    width: 80%
-    max-width: $maxWidth
-    margin: $marginPrjAndJob
-    display: grid
-    grid-gap: 15px
-    justify-content: center
+#outer
+    padding: $outerPadding
 
-    form
+    #container
+        width: 80%
+        max-width: $maxWidth
+        margin: $marginPrjAndJob
         display: grid
-        grid-gap: 5px
-            
-        .inputGroup
-            display: grid
-            justify-content: center
-            grid-template-columns: 8% 90%
+        grid-gap: 15px
+        justify-content: center
 
-            .label
-                padding: 5px
-                margin: 3px 0 0
-                text-align: center
+        form
+            display: grid
+            grid-gap: 5px
+                
+            .inputGroup
+                display: grid
+                justify-content: center
+                grid-template-columns: auto 90%
+                
+                min-width: 250px
+
+                .label
+                    padding: 5px
+                    margin: 3px 0 0
+                    text-align: center
 
             input, textarea
                 line-height: 25px

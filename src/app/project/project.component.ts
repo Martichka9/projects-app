@@ -23,7 +23,7 @@ export class ProjectComponent implements OnInit {
   }
 
   ngAfterViewChecked(){
-    if(document.getElementById('projectContainer').clientHeight+80 <= window.innerHeight){
+    if(document.getElementById('outer').offsetHeight+80 <= window.innerHeight){
       this.rend.setStyle(document.getElementById('footer'),'position','absolute');
       this.rend.setStyle(document.getElementById('footer'),'bottom','0');
     }

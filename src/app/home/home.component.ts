@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     
   }
   ngAfterViewChecked(){
-    if(document.getElementById('homeBody').offsetHeight+80 <= window.innerWidth){
+    if(document.getElementById('homeBody').offsetHeight+80 <= window.innerHeight){
       this.rend.setStyle(document.getElementById('footer'),'position','absolute');
       this.rend.setStyle(document.getElementById('footer'),'bottom','0');
     }

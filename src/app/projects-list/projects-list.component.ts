@@ -33,8 +33,6 @@ export class ProjectsListComponent implements OnInit {
   }
 
   ngAfterViewChecked(){
-    console.log(document.getElementById('listContainer').offsetHeight+80);
-    console.log(window.innerHeight);
     if(document.getElementById('listContainer').offsetHeight+180 <= window.innerHeight){
       this.rend.setStyle(document.getElementById('footer'),'position','absolute');
       this.rend.setStyle(document.getElementById('footer'),'bottom','0');

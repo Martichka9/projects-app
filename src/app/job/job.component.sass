@@ -1,31 +1,32 @@
 @import ../../assets/styles.sass
-  
-#jobContainer
-  @include anElementContainer
-  
-  .jobImage
-    width: 80%
 
-  #jobInfo
-    @include anElementInfoStyle
-    grid-template-rows: 40px auto auto auto auto 50px
-    width: 80%
+#outer
+  padding: $outerPadding  
+  #container
+    @include anElementContainer
+    
+    .jobImage
+      width: 80%
 
-    p
-      text-align: justify
-      margin: 15px 0
+    #jobInfo
+      @include anElementInfoStyle
+      width: 80%
 
-    .jobheaders
-      text-align: center
-      margin: 0
-      font-size: 1.1em
-      
-    p.projectDescription
-      @include descriptionStyle
+      p
+        text-align: justify
+        margin: 15px 0
 
-    .jobFooters
-      @include anElementFooter
-      
-      #jobComments
-        @include commentBtnStyle
+      .jobheaders
+        text-align: center
+        margin: 0
+        font-size: 1.1em
         
+      p.projectDescription
+        @include descriptionStyle
+
+      .jobFooters
+        @include anElementFooter
+        
+        #jobComments
+          @include commentBtnStyle
+          

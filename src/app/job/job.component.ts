@@ -23,7 +23,7 @@ export class JobComponent implements OnInit {
   }
 
   ngAfterViewChecked(){
-    if(document.getElementById('jobContainer').clientHeight+80 <= window.innerHeight){
+    if(document.getElementById('outer').clientHeight+80 <= window.innerHeight){
       this.rend.setStyle(document.getElementById('footer'),'position','absolute');
       this.rend.setStyle(document.getElementById('footer'),'bottom','0');
     }
