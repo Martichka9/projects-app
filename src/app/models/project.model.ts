@@ -1,10 +1,10 @@
 export class IProject {
     id: string;
-    company_name: string;
+    companyName: string;
     comments: number;
-    publish_date: string;
-    contact_name: string;
-    title: string;
-    location_city: string;
+    publishDate: string;
+    contactName: string;
+    publictitle: string;
+    locationCity: string;
     description: string;
 }

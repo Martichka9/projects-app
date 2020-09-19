@@ -36,7 +36,7 @@ const routes: Routes = [
     AboutComponent
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
     NgxPaginationModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes)

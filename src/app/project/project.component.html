@@ -3,11 +3,11 @@
         <img class="projectImage" src="https://wealthbuilders.org/wp-content/uploads/2015/06/project-placeholder.jpg" alt="{{project.title}}"/>
         <div id="projectInfo">
             <h2 class="projectheaders" *ngIf="project.title"><strong>{{project.title}}</strong></h2>
-            <p class="projectheaders" *ngIf="project.company_name">Published by <strong>{{project.company_name}}</strong></p>
-            <p class="projectheaders loc" *ngIf="project.location_city">({{project.location_city}})</p>
+            <p class="projectheaders" *ngIf="project.companyName">Published by <strong>{{project.companyName}}</strong></p>
+            <p class="projectheaders loc" *ngIf="project.locationCity">({{project.locationCity}})</p>
             <p class="projectDescription" *ngIf="project.description">{{project.description}}</p>
-            <p class="projectFooters date" *ngIf="project.publish_date">{{project.publish_date | date}}</p>
-            <p class="projectFooters" *ngIf="project.contact_name">Contact person: <a id="projectContact" href="mailto:some.real.mail@here.com">{{project.contact_name}}</a></p>
+            <p class="projectFooters date" *ngIf="project.publishDate">{{project.publishDate | date}}</p>
+            <p class="projectFooters" *ngIf="project.contactName">Contact person: <a id="projectContact" href="mailto:some.real.mail@here.com">{{project.contactName}}</a></p>
             <p class="projectFooters" *ngIf="project.comments"><a id="projectComments">Comments: {{project.comments}}</a></p>
         </div>
     </div>

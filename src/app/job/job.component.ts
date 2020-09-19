@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit, Renderer2, AfterViewChecked, OnDestroy } from '@angular/core';
 import { IProject } from '../models/project.model';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -8,9 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './job.component.html',
   styleUrls: ['./job.component.sass']
 })
-export class JobComponent implements OnInit {
+export class JobComponent implements OnInit, AfterViewChecked, OnDestroy {
   private job = IProject;
-  private subscription : Subscription;
+  private subscription: Subscription;
 
   constructor(private route: ActivatedRoute, private rend: Renderer2) { 
     this.subscription = this.route.data.subscribe(
@@ -19,20 +19,20 @@ export class JobComponent implements OnInit {
       });
   }
   ngOnInit() {
-    
+
   }
 
-  ngAfterViewChecked(){
-    if(document.getElementById('outer').clientHeight+80 <= window.innerHeight){
-      this.rend.setStyle(document.getElementById('footer'),'position','absolute');
-      this.rend.setStyle(document.getElementById('footer'),'bottom','0');
+  ngAfterViewChecked() {
+    if (document.getElementById('outer').clientHeight + 80 <= window.innerHeight){
+      this.rend.setStyle(document.getElementById('footer'), 'position', 'absolute');
+      this.rend.setStyle(document.getElementById('footer'), 'bottom', '0');
     }
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
-      this.rend.setStyle(document.getElementById('footer'),'position','');
-      this.rend.setStyle(document.getElementById('footer'),'bottom','');
+    this.rend.setStyle(document.getElementById('footer'), 'position', '');
+    this.rend.setStyle(document.getElementById('footer'), 'bottom', '');
     }
 }
 

@@ -3,10 +3,10 @@
         <img class="jobImage" src="https://wealthbuilders.org/wp-content/uploads/2015/06/project-placeholder.jpg" alt="{{job.title}}"/>
         <div id="jobInfo">
             <h2 class="jobheaders" *ngIf="job.title">{{job.title}}</h2>
-            <p class="jobheaders" *ngIf="job.company_name">{{job.company_name}} <span *ngIf="job.location_city">({{job.location_city}})</span></p>
-            <p class="jobheaders" *ngIf="job.publish_date">{{job.publish_date | date}}</p>
+            <p class="jobheaders" *ngIf="job.companyName">{{job.companyName}} <span *ngIf="job.locationCity">({{job.locationCity}})</span></p>
+            <p class="jobheaders" *ngIf="job.publishDate">{{job.publishDate | date}}</p>
             <p class="jobDescription" *ngIf="job.description">{{job.description}}</p>
-            <p class="jobFooters" *ngIf="job.contact_name">Contact person: <a id="jobContact" href="mailto:some.real.mail@here.com">{{job.contact_name}}</a></p>
+            <p class="jobFooters" *ngIf="job.contactName">Contact person: <a id="jobContact" href="mailto:some.real.mail@here.com">{{job.contactName}}</a></p>
             <p class="jobFooters" *ngIf="job.comments"><a href="#" id="jobComments">Apply now</a></p>
         </div>
     </div>

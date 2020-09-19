@@ -6,17 +6,17 @@
            
             <div class="inputGroup">
                 <label for="name" class="label"> <i class="fa fa-user"></i> </label>
-                <input formControlName="sender_name" id="name" placeholder="Full Name">
+                <input formControlName="senderName" id="name" placeholder="Full Name">
             </div>
-            <div class="errMsg" *ngIf="msgForm?.controls.sender_name?.errors?.required && msgForm?.controls.sender_name?.touched">Name is required!</div>
-            <div class="errMsg" *ngIf="msgForm?.controls.sender_name?.errors?.pattern && msgForm?.controls.sender_name?.touched">Please enter your first and last name starting with capital letter!</div>
+            <div class="errMsg" *ngIf="msgForm?.controls.senderName?.errors?.required && msgForm?.controls.senderName?.touched">Name is required!</div>
+            <div class="errMsg" *ngIf="msgForm?.controls.senderName?.errors?.pattern && msgForm?.controls.senderName?.touched">Please enter your first and last name starting with capital letter!</div>
             
             <div class="inputGroup">
                 <label for="email" class="label"> <i class="fa fa-envelope"></i> </label>
-                <input formControlName="sender_email" id="email" placeholder="Email Address" type="email">
+                <input formControlName="senderEmail" id="email" placeholder="Email Address" type="email">
             </div>
-            <div class="errMsg" *ngIf="msgForm?.controls.sender_email?.errors?.required && msgForm?.controls.sender_email?.touched">E-mail is required!</div>
-            <div class="errMsg" *ngIf="msgForm?.controls.sender_email?.errors?.email && msgForm?.controls.sender_email?.touched">Please enter valid e-mail!</div>
+            <div class="errMsg" *ngIf="msgForm?.controls.senderEmail?.errors?.required && msgForm?.controls.senderEmail?.touched">E-mail is required!</div>
+            <div class="errMsg" *ngIf="msgForm?.controls.senderEmail?.errors?.email && msgForm?.controls.senderEmail?.touched">Please enter valid e-mail!</div>
     
             
             <div class="inputGroup">
