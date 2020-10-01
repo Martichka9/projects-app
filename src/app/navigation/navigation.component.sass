@@ -25,14 +25,16 @@
       display: flex
 
       .mLink
+        height: $navLinksHeight
+        margin: 16px 0
         .links
           display: block
-          height: $headFootHeight
+          height: $navLinksHeight
           width: 100px
           color: #4e4e4e
           text-align: center
           text-decoration: none
-          padding-top: 30px
+          padding-top: 15px
           box-sizing: border-box
       .mLink:hover
         box-shadow: $boxesShadow
@@ -59,9 +61,13 @@
         .mLink
           background-color: #fff
           text-align: center
+          margin: 0
           a.links
             width: auto
-        
+          &.close a.links
+            color: #009688
+            padding: 6px
+
       #menuIcon
         display: block
         font-size: 35px
@@ -77,4 +83,4 @@
         .mLink
           a.links
             height: 60px
-            padding: 21px
+            padding: 15px
