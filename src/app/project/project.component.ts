@@ -9,12 +9,13 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./project.component.sass']
 })
 export class ProjectComponent implements OnInit {
-  private project = IProject;
-  private subscription : Subscription;
-  
+  project = new IProject();
+  private subscription: Subscription;
+
   constructor(private route: ActivatedRoute, private rend: Renderer2) { 
     this.subscription = this.route.data.subscribe(
       data => {
+        console.log(route);
         this.project = data.pResolver.projects.find(elem => elem.id === route.params['_value']['id']);
       });
   }

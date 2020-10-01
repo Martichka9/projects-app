@@ -4,7 +4,7 @@ export class IProject {
     comments: number;
     publishDate: string;
     contactName: string;
-    publictitle: string;
+    title: string;
     locationCity: string;
     description: string;
 }

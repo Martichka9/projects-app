@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./job.component.sass']
 })
 export class JobComponent implements OnInit, AfterViewChecked, OnDestroy {
-  private job = IProject;
+  job = new IProject();
   private subscription: Subscription;
 
   constructor(private route: ActivatedRoute, private rend: Renderer2) { 
