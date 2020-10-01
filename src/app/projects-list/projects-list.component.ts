@@ -10,10 +10,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./projects-list.component.sass']
 })
 export class ProjectsListComponent implements OnInit, AfterViewChecked, OnDestroy {
-  private currPage = 1;
-  private prjToLoad = 9;
-  private prjList: Array<IProject> = [];
-  private prjListSubscription: Subscription;
+  currPage = 1;
+  prjToLoad = 9;
+  prjList: Array<IProject> = [];
+  prjListSubscription: Subscription;
 
   public clicks = false;
 

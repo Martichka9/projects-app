@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination';
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { HomeComponent } from './home/home.component';
 import { ProjectComponent } from './project/project.component';

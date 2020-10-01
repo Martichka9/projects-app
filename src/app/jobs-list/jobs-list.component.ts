@@ -9,10 +9,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./jobs-list.component.sass']
 })
 export class JobsListComponent implements OnInit, AfterViewChecked, OnDestroy {
-  private currPage = 1;
-  private prjToLoad = 8;
-  private prjList: Array<IProject> = [];
-  private prjListSubscription: Subscription;
+  currPage = 1;
+  prjToLoad = 8;
+  prjList: Array<IProject> = [];
+  prjListSubscription: Subscription;
 
   constructor(private route: ActivatedRoute, private rend: Renderer2) {
     this.prjListSubscription = this.route.data.subscribe(
