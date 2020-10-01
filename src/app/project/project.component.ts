@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProject } from '../models/project.model';
 import { Subscription } from 'rxjs';
@@ -12,7 +12,7 @@ export class ProjectComponent implements OnInit {
   project = new IProject();
   private subscription: Subscription;
 
-  constructor(private route: ActivatedRoute, private rend: Renderer2) { 
+  constructor(private route: ActivatedRoute) {
     this.subscription = this.route.data.subscribe(
       data => {
         console.log(route);
@@ -21,18 +21,5 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  ngAfterViewChecked(){
-    if(document.getElementById('outer').offsetHeight+80 <= window.innerHeight){
-      this.rend.setStyle(document.getElementById('footer'),'position','absolute');
-      this.rend.setStyle(document.getElementById('footer'),'bottom','0');
-    }
-  }
-
-  ngOnDestroy(){
-    this.subscription.unsubscribe();    
-    this.rend.setStyle(document.getElementById('footer'),'position','');
-    this.rend.setStyle(document.getElementById('footer'),'bottom','');
   }
 }

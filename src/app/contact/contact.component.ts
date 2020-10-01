@@ -1,38 +1,25 @@
-import { Component, OnInit, Renderer2, AfterViewChecked, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IMessage } from '../models/message.model';
-import {FormBuilder, FormGroup, FormControl, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.sass']
 })
-export class ContactComponent implements OnInit, AfterViewChecked, OnDestroy {
+export class ContactComponent implements OnInit {
 
-  submitedForm : IMessage;
+  submitedForm: IMessage;
   msgForm: FormGroup;
 
-  constructor(private fb : FormBuilder, private rend: Renderer2) { }
+  constructor(private fb: FormBuilder) { }
   ngOnInit() {
     this.msgForm = this.fb.group({
-      senderName: ['',[Validators.required,Validators.pattern(/[A-Z][a-z]+\s[A-Z][a-z]+/)]],
-      senderEmail: ['',[Validators.required,Validators.email]],
-      message: ['',[Validators.required,Validators.minLength(50)]]
+      senderName: ['', [Validators.required, Validators.pattern(/[A-Z][a-z]+\s[A-Z][a-z]+/)]],
+      senderEmail: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(50)]]
     });
   }
-  
-  ngAfterViewChecked() {
-    if (document.getElementById('outer').offsetHeight + 80 <= window.innerHeight){
-      this.rend.setStyle(document.getElementById('footer'), 'position', 'absolute');
-      this.rend.setStyle(document.getElementById('footer'), 'bottom', '0');
-    }
-  }
-
-  ngOnDestroy() { 
-    this.rend.setStyle(document.getElementById('footer'), 'position', '');
-    this.rend.setStyle(document.getElementById('footer'), 'bottom', '');
-  }
-
   send(form){
     //some real logic here
     this.ngOnInit();
