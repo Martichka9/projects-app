@@ -12,7 +12,7 @@
             <div class="errMsg" *ngIf="msgForm?.controls.senderName?.errors?.pattern && msgForm?.controls.senderName?.touched">Please enter your first and last name starting with capital letter!</div>
             
             <div class="inputGroup">
-                <label for="email" class="label"> <i class="fa fa-envelope"></i> </label>
+                <label for="email" class="label"><i class="fas fa-at"></i></label>
                 <input formControlName="senderEmail" id="email" placeholder="Email Address" type="email">
             </div>
             <div class="errMsg" *ngIf="msgForm?.controls.senderEmail?.errors?.required && msgForm?.controls.senderEmail?.touched">E-mail is required!</div>
@@ -20,14 +20,14 @@
     
             
             <div class="inputGroup">
-                <label for="message" class="label"> <i class="fa fa-lock"></i> </label>
+                <label for="message" class="label"><i class="fas fa-envelope-open-text"></i></label>
                 <textarea formControlName="message" name="message" id="message" placeholder="Your message" type="message" cols="80" rows="15"></textarea>
             </div>
             <div class="errMsg" *ngIf="msgForm?.controls.message?.errors?.required && msgForm?.controls.message?.touched">Message is required!</div>
             <div class="errMsg" *ngIf="!!msgForm?.controls.message?.errors?.minlength && msgForm?.controls.message?.touched">Message should be at least 50 characters long!</div>
             
             <div class="formGroup">
-                <button type="submit" class="btn" [disabled]="msgForm?.invalid">Send</button>
+                <button type="submit" class="btn" [disabled]="msgForm?.invalid"><i class="far fa-envelope"></i> Send</button>
             </div>
         </form>
     </div>
