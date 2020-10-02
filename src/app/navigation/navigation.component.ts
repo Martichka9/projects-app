@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
@@ -12,4 +12,9 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
+  // updating menu styles on window size changed
+  @HostListener('window:resize', ['$event'])
+    onResize(event) {
+    event.target.innerWidth;
+  }
 }
