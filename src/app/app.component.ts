@@ -10,6 +10,7 @@ export class AppComponent implements AfterViewChecked{
 
   constructor(private rend: Renderer2) { }
 
+  // position footer on end of screen/page after all content loaded
   ngAfterViewChecked() {
     if (document.getElementById('wrapper').offsetHeight + 80 <= window.innerHeight){
       this.rend.setStyle(document.getElementById('footer'), 'position', 'absolute');
