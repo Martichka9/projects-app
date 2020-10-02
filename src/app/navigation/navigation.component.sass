@@ -28,21 +28,34 @@
       .mLink
         height: $navLinksHeight
         margin: 16px 0
+        padding: 0 5px
         .links
           display: block
           height: $navLinksHeight
-          width: 100px
+          min-width: 80px
           color: #4e4e4e
-          text-align: center
           text-decoration: none
           padding-top: 15px
           box-sizing: border-box
+          text-align: center
       .mLink:hover
         box-shadow: $boxesShadow
         border-radius: $borderRadius
-        font-weight: bold
+        text-shadow: 0 0 1px #000
         color: #009688
-
+      .close .links i
+        grid-column: 1 / span 3
+        justify-content: center 
+        
+.mLink .links
+  .iconBox
+    width: 25px
+    display: inline-block
+    justify-self: right
+    text-align: right
+    margin-right: 3px
+  span 
+    text-align: left
 
 @media only screen and (max-width: 960px)
   #navContainer
@@ -65,10 +78,18 @@
           text-align: center
           margin: 0
           a.links
+            height: 60px
+            display: grid
+            gap: 5px
+            grid-template-columns: repeat(2,1fr)
+            justify-content: center
             width: auto
           &.close a.links
             color: #009688
             padding: 6px
+          .iconBox
+            text-align: center
+            margin: 0
 
       #menuIcon
         display: block
@@ -77,12 +98,3 @@
 
       #menuIcon:hover
         cursor: pointer
-
-@media only screen and (max-width: 960px)
-  #navContainer
-    #nav
-      #mainMenu
-        .mLink
-          a.links
-            height: 60px
-            padding: 15px
