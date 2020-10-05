@@ -1,0 +1,82 @@
+$maxWidth: 1024px
+$borderRadius: 7px 7px
+$boxesShadow: 0px 0px 13px 1px #009688 inset
+$marginHomeAndList: 80px auto 0
+$marginPrjAndJob: 90px auto 0
+$headFootHeight: 80px
+$navLinksHeight: 46px
+$headFootBackgroundColor: #d3f7ee
+$projectHeaderFontSize: 1.2em
+$outerPadding: 20px 0 50px
+  
+@mixin headerContainerStyle
+  max-height: 200px
+  background: url('https://ak9.picdn.net/shutterstock/videos/12139319/thumb/1.jpg') center
+  background-size: cover
+  display: grid
+  grid-gap: 10px
+  padding: 20px 35px
+  margin-bottom: 1rem
+
+@mixin aListBox
+  text-decoration: none
+  background-color: #fff
+  color: #000
+  border-radius: $borderRadius
+  box-shadow: -2px 2px 3px 1px #aac1bc
+
+@mixin listContainerStyle
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-around
+  max-width: $maxWidth
+  margin: 1rem auto 1rem
+
+@mixin listheaderTexts
+  width: 100%
+  max-width: $maxWidth
+  margin: 0 auto
+  color: white
+  text-align: left
+
+@mixin anElementContainer
+  width: 80%
+  max-width: $maxWidth
+  min-width: 250px
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  justify-content: center
+  padding: 20px 10px
+  box-sizing: border-box
+  box-shadow: $boxesShadow
+  background-color: #fff
+  border-radius: $borderRadius
+  margin: $marginPrjAndJob
+
+@mixin anElementInfoStyle
+  display: grid
+  grid-template-rows: auto auto auto auto auto auto 50px
+  justify-content: center
+  align-content: center
+
+@mixin descriptionStyle
+  margin: 40px 0
+  text-align: justify
+
+@mixin anElementFooter
+  text-align: right
+  margin: 2px 0
+  font-size: 0.8em
+
+@mixin commentBtnStyle
+  display: inline-block
+  background-color: #009688
+  color: #fff
+  font-weight: bold
+  margin: 0 2vw
+  padding: 7px
+  border-radius: $borderRadius
+  width: 113px
+  text-align: center
