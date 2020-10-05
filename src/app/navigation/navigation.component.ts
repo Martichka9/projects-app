@@ -1,11 +1,11 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewChecked } from '@angular/core';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.sass']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, AfterViewChecked {
 
   constructor() { }
 
@@ -16,5 +16,9 @@ export class NavigationComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
     onResize(event) {
     event.target.innerWidth;
+  }
+
+  ngAfterViewChecked() {
+    document.querySelectorAll('.links')[0].click();
   }
 }
