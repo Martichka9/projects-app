@@ -15,14 +15,14 @@ import { ContactComponent } from './contact/contact.component';
 import { PResolver } from './services/p-resolver.service';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'projects-list', component: ProjectsListComponent, resolve: {pResolver: PResolver}},
   {path: 'projects-list/:id', component: ProjectComponent, resolve: {pResolver: PResolver}},
   {path: 'jobs-list', component: JobsListComponent, resolve: {pResolver: PResolver}},
   {path: 'jobs-list/:id', component: JobComponent, resolve: {pResolver: PResolver}},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: '', pathMatch: 'full', redirectTo: 'home'}
+  {path: '', pathMatch: 'full', redirectTo: ''}
 ];
 
 @NgModule({
